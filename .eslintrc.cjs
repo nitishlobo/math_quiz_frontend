@@ -3,11 +3,12 @@ module.exports = {
   env: { browser: true, es2020: true },
   extends: [
     'eslint:recommended',
-    "plugin:react/recommended", // https://github.com/jsx-eslint/eslint-plugin-react
-    "plugin:react/jsx-runtime", // https://github.com/jsx-eslint/eslint-plugin-react
+    'plugin:react/recommended', // https://github.com/jsx-eslint/eslint-plugin-react
+    'plugin:react/jsx-runtime', // https://github.com/jsx-eslint/eslint-plugin-react
     'plugin:@typescript-eslint/recommended-type-checked',
     'plugin:@typescript-eslint/stylistic-type-checked',
-    'plugin:react-hooks/recommended'
+    'plugin:react-hooks/recommended',
+    'prettier',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
@@ -24,4 +25,4 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
-}
+};
