@@ -15,11 +15,13 @@
   },
   "prettier": "@vercel/style-guide/prettier",
   "dependencies": {
+    "axios": "^1.7.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.383.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.23.1",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
   },
@@ -32,6 +34,7 @@
     "@vercel/style-guide": "^6.0.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "autoprefixer": "^10.4.19",
+    "daisyui": "^4.12.2",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
