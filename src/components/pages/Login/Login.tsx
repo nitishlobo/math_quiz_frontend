@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
+import { themeChange } from 'theme-change';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  useEffect(() => {
+    themeChange(false);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {};
 
