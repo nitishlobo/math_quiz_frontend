@@ -14,7 +14,7 @@ const Login: React.FC = () => {
       <div className="bg-base-200 p-8 rounded shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
 
-        <label className="primary-label mt-4 flex items-center gap-2">
+        <label className="primary-input mt-4 flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 16 16"
@@ -26,7 +26,7 @@ const Login: React.FC = () => {
           <input type="text" className="grow" placeholder="Username" required />
         </label>
 
-        <label className="primary-label mt-6 flex items-center gap-2">
+        <label className="primary-input mt-6 flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 16 16"
