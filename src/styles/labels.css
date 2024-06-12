@@ -1,0 +1,10 @@
+/* Styles for labels. */
+
+.primary-label {
+  @apply du-input du-input-primary;
+}
+
+.primary-label:focus-within {
+  border-width: 3px;
+  outline: none;
+}
