@@ -41,31 +41,31 @@ const ThemeDropdown: React.FC = () => {
   }, []);
 
   return (
-    <div className="du-navbar bg-base-300 rounded-box">
-      <div className="flex justify-end flex-1 px-2">
-        <div className="flex items-stretch">
-          <div className="du-dropdown du-dropdown-end">
-            <div
-              tabIndex="0"
-              role="button"
-              className="du-btn du-btn-ghost du-rounded-btn"
-            >
-              Theme
-            </div>
-            <ul
-              tabIndex="0"
-              className="du-menu du-dropdown-content z-[1] du-p-2 shadow bg-base-100 du-rounded-box w-52 mt-4"
-            >
-              {themes.map((theme) => (
-                <li key={theme.value}>
-                  <a data-set-theme={theme.value} data-act-class="ACTIVECLASS">
-                    {theme.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+    <div className="du-navbar bg-base-100">
+      <div className="flex-1"></div>
+      <div className="flex-none">
+        <ul className="du-menu du-menu-horizontal px-1">
+          <li className="relative">
+            <details className="dropdown">
+              <summary>Themes</summary>
+              <ul
+                tabIndex={0}
+                className="du-menu du-dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4 absolute right-0"
+              >
+                {themes.map((theme) => (
+                  <li key={theme.value} data-theme={theme.value}>
+                    <a
+                      data-set-theme={theme.value}
+                      data-act-class="ACTIVECLASS"
+                    >
+                      {theme.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          </li>
+        </ul>
       </div>
     </div>
   );
