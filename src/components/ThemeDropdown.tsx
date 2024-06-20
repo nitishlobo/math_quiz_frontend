@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { themeChange } from 'theme-change';
 
 const themes = [
@@ -56,14 +56,11 @@ const ThemeDropdown: React.FC = () => {
                   <button
                     key={theme.value}
                     data-theme={theme.value}
-                    className="du-btn my-1"
+                    className="du-btn my-1 hover:bg-base-200"
+                    data-set-theme={theme.value}
+                    data-act-class="ACTIVECLASS"
                   >
-                    <a
-                      data-set-theme={theme.value}
-                      data-act-class="ACTIVECLASS"
-                    >
-                      {theme.name}
-                    </a>
+                    {theme.name}
                   </button>
                 ))}
               </ul>
