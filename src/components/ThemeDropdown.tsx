@@ -53,14 +53,18 @@ const ThemeDropdown: React.FC = () => {
                 className="du-menu du-dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4 absolute right-0"
               >
                 {themes.map((theme) => (
-                  <li key={theme.value} data-theme={theme.value}>
+                  <button
+                    key={theme.value}
+                    data-theme={theme.value}
+                    className="du-btn my-1"
+                  >
                     <a
                       data-set-theme={theme.value}
                       data-act-class="ACTIVECLASS"
                     >
                       {theme.name}
                     </a>
-                  </li>
+                  </button>
                 ))}
               </ul>
             </details>
