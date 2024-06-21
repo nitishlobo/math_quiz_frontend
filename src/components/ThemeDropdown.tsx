@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import { FaCheck } from 'react-icons/fa';
 import { themeChange } from 'theme-change';
 
 const themes = [
   { name: 'Light', value: 'light' },
   { name: 'Dark', value: 'dark' },
-  { name: 'Cupcake', value: 'cupcake' },
+  { name: 'Orange', value: 'halloween' },
+  { name: 'Luxury', value: 'luxury' },
   { name: 'Bumblebee', value: 'bumblebee' },
   { name: 'Emerald', value: 'emerald' },
+  { name: 'Cupcake', value: 'cupcake' },
   { name: 'Corporate', value: 'corporate' },
   { name: 'Synthwave', value: 'synthwave' },
   { name: 'Cyberpunk', value: 'cyberpunk' },
   { name: 'Valentine', value: 'valentine' },
-  { name: 'Orange', value: 'halloween' },
   { name: 'Garden', value: 'garden' },
   { name: 'Forest', value: 'forest' },
   { name: 'Aqua', value: 'aqua' },
@@ -20,7 +22,6 @@ const themes = [
   { name: 'Fantasy', value: 'fantasy' },
   { name: 'Wireframe', value: 'wireframe' },
   { name: 'Black', value: 'black' },
-  { name: 'Luxury', value: 'luxury' },
   { name: 'Dracula', value: 'dracula' },
   { name: 'Cymk', value: 'cymk' },
   { name: 'Autumn', value: 'autumn' },
@@ -36,6 +37,10 @@ const themes = [
 ];
 
 const ThemeDropdown: React.FC = () => {
+  const [activeTheme, setActiveTheme] = useState(
+    () => localStorage.getItem('theme') || 'light',
+  );
+
   useEffect(() => {
     themeChange(false);
   }, []);
@@ -56,11 +61,13 @@ const ThemeDropdown: React.FC = () => {
                   <button
                     key={theme.value}
                     data-theme={theme.value}
-                    className="du-btn my-1 hover:bg-base-200"
+                    className="du-btn btn-base-100 my-1 hover:bg-base-200 hover:border-0 animate-none"
                     data-set-theme={theme.value}
                     data-act-class="ACTIVECLASS"
+                    onClick={() => setActiveTheme(theme.value)}
                   >
-                    {theme.name}
+                    {activeTheme === theme.value && <FaCheck />}
+                    {theme.name} <div className="badge"></div>
                   </button>
                 ))}
               </ul>
