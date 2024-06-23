@@ -11,6 +11,7 @@ const themes = [
   { name: 'Emerald', value: 'emerald' },
   { name: 'Cupcake', value: 'cupcake' },
   { name: 'Corporate', value: 'corporate' },
+  { name: 'Dim', value: 'dim' },
   { name: 'Synthwave', value: 'synthwave' },
   { name: 'Cyberpunk', value: 'cyberpunk' },
   { name: 'Valentine', value: 'valentine' },
@@ -31,7 +32,6 @@ const themes = [
   { name: 'Night', value: 'night' },
   { name: 'Coffee', value: 'coffee' },
   { name: 'Winter', value: 'winter' },
-  { name: 'Dim', value: 'dim' },
   { name: 'Nord', value: 'nord' },
   { name: 'Sunset', value: 'sunset' },
 ];
@@ -61,13 +61,20 @@ const ThemeDropdown: React.FC = () => {
                   <button
                     key={theme.value}
                     data-theme={theme.value}
-                    className="du-btn btn-base-100 my-1 hover:bg-base-200 hover:border-0 animate-none"
+                    className="du-btn du-btn-base-300 no-animation my-1 hover:bg-base-200 hover:border-0 w-full flex items-center justify-between"
                     data-set-theme={theme.value}
                     data-act-class="ACTIVECLASS"
                     onClick={() => setActiveTheme(theme.value)}
                   >
-                    {activeTheme === theme.value && <FaCheck />}
-                    {theme.name} <div className="badge"></div>
+                    <div className="flex items-center space-x-2">
+                      <div>{activeTheme === theme.value && <FaCheck />}</div>
+                      <div className="text-left">{theme.name}</div>
+                    </div>
+                    <div className="flex gap-1">
+                      <div className="du-badge du-badge-primary rounded-full px-1 py-3"></div>
+                      <div className="du-badge du-badge-secondary rounded-full px-1 py-3"></div>
+                      <div className="du-badge du-badge-neutral rounded-full px-1 py-3"></div>
+                    </div>
                   </button>
                 ))}
               </ul>
