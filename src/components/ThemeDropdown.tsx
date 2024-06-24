@@ -66,14 +66,20 @@ const ThemeDropdown: React.FC = () => {
                     data-act-class="ACTIVECLASS"
                     onClick={() => setActiveTheme(theme.value)}
                   >
-                    <div className="flex items-center space-x-2">
-                      <div>{activeTheme === theme.value && <FaCheck />}</div>
-                      <div className="text-left">{theme.name}</div>
-                    </div>
-                    <div className="flex gap-1">
-                      <div className="du-badge du-badge-primary rounded-full px-1 py-3"></div>
-                      <div className="du-badge du-badge-secondary rounded-full px-1 py-3"></div>
-                      <div className="du-badge du-badge-neutral rounded-full px-1 py-3"></div>
+                    <div className="flex flex-row items-center">
+                      <div className="flex-none w-5">
+                        {activeTheme === theme.value && <FaCheck />}
+                      </div>
+                      <div className="flex-none text-left w-24">
+                        {theme.name}
+                      </div>
+                      <div className="flex-none w-5">
+                        <div className="flex gap-1">
+                          <div className="du-badge du-badge-primary rounded-full px-1 py-3"></div>
+                          <div className="du-badge du-badge-secondary rounded-full px-1 py-3"></div>
+                          <div className="du-badge du-badge-neutral rounded-full px-1 py-3"></div>
+                        </div>
+                      </div>
                     </div>
                   </button>
                 ))}
