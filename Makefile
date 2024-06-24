@@ -9,6 +9,7 @@ help:
 	@echo "FORMATTING"
 	@echo "  format-files                            format files using prettier"
 	@echo "  check-formatting                        checks files have been formatted"
+	@echo "  run                                     run app"
 
 
 format-files:
@@ -16,3 +17,6 @@ format-files:
 
 check-formatting:
 	npx prettier . --check
+
+run:
+	npm run dev
