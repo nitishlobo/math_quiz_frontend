@@ -61,10 +61,10 @@ const ThemeDropdown: React.FC = () => {
                   <button
                     key={theme.value}
                     data-theme={theme.value}
-                    className="du-btn du-btn-base-300 no-animation my-1 hover:bg-base-200 hover:border-0 w-full flex items-center justify-between"
-                    data-set-theme={theme.value}
                     data-act-class="ACTIVECLASS"
+                    data-set-theme={theme.value}
                     onClick={() => setActiveTheme(theme.value)}
+                    className="du-btn du-btn-base-200 border-0 my-1 no-animation w-full flex items-center hover:bg-base-200 hover:border-0"
                   >
                     <div className="flex flex-row items-center">
                       <div className="flex-none w-5">
