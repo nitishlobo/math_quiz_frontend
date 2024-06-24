@@ -46,49 +46,38 @@ const ThemeDropdown: React.FC = () => {
   }, []);
 
   return (
-    <div className="du-navbar bg-base-100">
-      <div className="flex-1"></div>
-      <div className="flex-none">
-        <ul className="du-menu du-menu-horizontal px-1">
-          <li className="relative">
-            <details className="dropdown">
-              <summary>Themes</summary>
-              <ul
-                tabIndex={0}
-                className="du-menu du-dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4 absolute right-0"
-              >
-                {themes.map((theme) => (
-                  <button
-                    key={theme.value}
-                    data-theme={theme.value}
-                    data-act-class="ACTIVECLASS"
-                    data-set-theme={theme.value}
-                    onClick={() => setActiveTheme(theme.value)}
-                    className="du-btn du-btn-base-200 border-0 my-1 no-animation w-full flex items-center hover:bg-base-200 hover:border-0"
-                  >
-                    <div className="flex flex-row items-center">
-                      <div className="flex-none w-5">
-                        {activeTheme === theme.value && <FaCheck />}
-                      </div>
-                      <div className="flex-none text-left w-24">
-                        {theme.name}
-                      </div>
-                      <div className="flex-none w-5">
-                        <div className="flex gap-1">
-                          <div className="du-badge du-badge-primary rounded-full px-1 py-3"></div>
-                          <div className="du-badge du-badge-secondary rounded-full px-1 py-3"></div>
-                          <div className="du-badge du-badge-neutral rounded-full px-1 py-3"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </button>
-                ))}
-              </ul>
-            </details>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <details className="dropdown">
+      <summary>Themes</summary>
+      <ul
+        tabIndex={0}
+        className="du-menu du-dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4 absolute right-0"
+      >
+        {themes.map((theme) => (
+          <button
+            key={theme.value}
+            data-theme={theme.value}
+            data-act-class="ACTIVECLASS"
+            data-set-theme={theme.value}
+            onClick={() => setActiveTheme(theme.value)}
+            className="du-btn du-btn-base-200 border-0 my-1 no-animation w-full flex items-center hover:bg-base-200 hover:border-0"
+          >
+            <div className="flex flex-row items-center">
+              <div className="flex-none w-5">
+                {activeTheme === theme.value && <FaCheck />}
+              </div>
+              <div className="flex-none text-left w-24">{theme.name}</div>
+              <div className="flex-none w-5">
+                <div className="flex gap-1">
+                  <div className="du-badge du-badge-primary rounded-full px-1 py-3"></div>
+                  <div className="du-badge du-badge-secondary rounded-full px-1 py-3"></div>
+                  <div className="du-badge du-badge-neutral rounded-full px-1 py-3"></div>
+                </div>
+              </div>
+            </div>
+          </button>
+        ))}
+      </ul>
+    </details>
   );
 };
 
